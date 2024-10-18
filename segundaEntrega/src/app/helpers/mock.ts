@@ -3,27 +3,33 @@ import { IUser,ICourse } from "../shared/interface"
 export const coursesList:ICourse[] = [
     {
       "name": "Python",
-      "id": "1b1b"
+      "id": "1b1b",
+      "category":"Programación"
     },
     {
       "name": "Java",
-      "id": "2c1c"
+      "id": "2c1c",
+      "category":"Programaión"
     },
     {
       "name": "C++",
-      "id": "2c1b"
+      "id": "2c1b",
+      "category":"Programación"
     },
     {
       "name": "UX/UI",
-      "id": "11fg"
+      "id": "11fg",
+      "category":"Diseño"
     },
     {
       "name": "C#",
-      "id": "4ftv"
+      "id": "4ftv",
+      "category":"Programación"
     },
     {
       "name": "SQL",
-      "id": "y0q0"
+      "id": "y0q0",
+      "category":"Base de datos"
     },
 ] 
 export const userList:IUser[] = [

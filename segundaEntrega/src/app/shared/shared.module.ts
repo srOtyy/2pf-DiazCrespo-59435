@@ -8,11 +8,12 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input'
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatSelectModule} from '@angular/material/select';
 @NgModule({
   declarations: [],
   imports: [
-    MatListModule,MatFormFieldModule,ReactiveFormsModule,FormsModule,MatButtonModule,MatIconModule,MatInputModule,MatToolbarModule,MatSidenavModule
+    MatListModule,MatFormFieldModule,ReactiveFormsModule,FormsModule,MatButtonModule,MatIconModule,MatInputModule,MatToolbarModule,MatSidenavModule,MatSelectModule
   ],
-  exports:[MatListModule,MatFormFieldModule,ReactiveFormsModule,FormsModule,MatButtonModule,MatIconModule,MatInputModule,MatToolbarModule,MatSidenavModule]
+  exports:[MatListModule,MatFormFieldModule,ReactiveFormsModule,FormsModule,MatButtonModule,MatIconModule,MatInputModule,MatToolbarModule,MatSidenavModule,MatSelectModule]
 })
 export class SharedModule { }

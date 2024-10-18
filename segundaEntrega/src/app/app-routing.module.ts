@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './features/dashboard/dashboard/dashboard.component';
-import { ListCoursesComponent } from './features/courses/list-courses/list-courses.component';
 import { UserListComponent } from './features/users/user-list/user-list.component';
-
+import { CoursesListComponent } from './features/courses/courses-list/courses-list.component';
 const routes: Routes = [
   {
     path: 'dashboard',
@@ -16,7 +15,7 @@ const routes: Routes = [
     loadChildren: ()=> import('./features/users/users.module').then(m => m.UsersModule)
   },
   {path: 'courses',
-    component:ListCoursesComponent,
+    component:CoursesListComponent,
     loadChildren: ()=> import('./features/courses/courses.module').then(m=>m.CoursesModule)
   },
   {

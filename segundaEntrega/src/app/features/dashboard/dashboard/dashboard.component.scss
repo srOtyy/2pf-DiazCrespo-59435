@@ -1,0 +1,16 @@
+@import "../../../shared/colors.scss";
+h1{
+    padding: 50px 70px 20px 70px;
+    text-align: center;
+    color: $color-principal;
+    font-size: 35px;
+}
+.background{
+    background-image: url("../../../../../public/background.jpg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: auto;
+    width: 700px;
+    height: 350px;
+}

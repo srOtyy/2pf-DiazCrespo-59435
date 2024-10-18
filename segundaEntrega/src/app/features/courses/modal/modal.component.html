@@ -1,0 +1,28 @@
+<div class="modal-div">
+    <h3 *ngIf="creating; else elseB">Creando nuevo usuario</h3>
+    <ng-template #elseB>
+      <h3> Editando {{this.data.name}}</h3>
+    </ng-template>
+    
+    <form class="formulario" [formGroup]="formulario">
+        <mat-form-field class="form-field">
+            <mat-label>Nombre completo</mat-label>
+            <input  matInput  formControlName="name">
+            <mat-error *ngIf="this.formulario.get('name')?.hasError('required')">El nombre es <strong>obligatorio</strong></mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-field">
+            <mat-label>Categoria</mat-label>
+            <mat-select formControlName ="category">
+                <mat-option *ngFor="let category of categorys" [value]="category">
+                    {{category}}
+                </mat-option>
+            </mat-select>
+          </mat-form-field>
+        
+  
+        <button mat-flat-button [disabled]="!this.formulario.valid" (click)="send()">{{btnText}}</button>
+    
+        <button mat-button  (click)="close()">Volver</button>
+  </form>
+  
+</div>

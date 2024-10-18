@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IUser } from '../../shared/interface';
 import { userList } from '../../helpers/mock';
-import { BehaviorSubject, Observable, throwError } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
