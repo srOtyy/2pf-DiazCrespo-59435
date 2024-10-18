@@ -1,8 +1,9 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { generarIdAleatorio } from '../../../shared/utils';
-import { CoursesService } from '../../../core/services/courses.service';
+import { CoursesService } from '../../../../core/services/courses.service';
+import { generarIdAleatorio } from '../../../../shared/utils';
+
 
 @Component({
   selector: 'app-modal',

@@ -1,21 +1,20 @@
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
-import { UsersService } from '../../../core/services/users.service';
-import { IUser } from '../../../shared/interface';
 import { Subscription } from 'rxjs';
 import { ModalComponent } from '../modal/modal.component';
 import { MatDialog } from '@angular/material/dialog';
-
+import { CoursesService } from '../../../../core/services/courses.service';
+import { ICourse } from '../../../../shared/interface';
 @Component({
-  selector: 'app-user-list',
-  templateUrl: './user-list.component.html',
-  styleUrl: './user-list.component.scss'
+  selector: 'app-courses-list',
+  templateUrl: './courses-list.component.html',
+  styleUrl: './courses-list.component.scss'
 })
-export class UserListComponent implements OnInit,OnDestroy{
-  userList: IUser[] = []
+export class CoursesListComponent implements OnInit,OnDestroy{
+  coursesList: ICourse[] = []
   
   readonly dialog = inject(MatDialog);
   private suscription: Subscription | null = null; 
-  constructor(private _usersService:UsersService){}
+  constructor(private _coursesService:CoursesService){}
   ngOnInit(): void {
     this.suscribe()
   }
@@ -23,8 +22,8 @@ export class UserListComponent implements OnInit,OnDestroy{
     this.unsuscribe()
   }
   suscribe():void{
-    this.suscription = this._usersService.getObservable().subscribe({
-      next: data => this.userList = data,
+    this.suscription = this._coursesService.getObservable().subscribe({
+      next: data => this.coursesList = data,
       error: error=> console.log("error en la suscripcion",error)
     })
   }
@@ -36,12 +35,12 @@ export class UserListComponent implements OnInit,OnDestroy{
   }
   
   deleteUser(id: string):void{
-    this._usersService.deleteUser(id)
+    this._coursesService.deleteCourse(id)
   }
-  openModal(user?: IUser): void {
-    if(user){//editando
+  openModal(course?: ICourse): void {
+    if(course){//editando
       const dialogRef = this.dialog.open(ModalComponent,{
-        data: user
+        data: course
       });
       dialogRef.afterClosed().subscribe();
      
@@ -51,6 +50,4 @@ export class UserListComponent implements OnInit,OnDestroy{
 
     }
   }
-  
-  
 }

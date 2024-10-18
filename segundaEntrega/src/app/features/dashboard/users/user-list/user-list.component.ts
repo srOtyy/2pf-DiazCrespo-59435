@@ -1,20 +1,21 @@
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
-import { ICourse } from '../../../shared/interface';
 import { Subscription } from 'rxjs';
 import { ModalComponent } from '../modal/modal.component';
 import { MatDialog } from '@angular/material/dialog';
-import { CoursesService } from '../../../core/services/courses.service';
+import { UsersService } from '../../../../core/services/users.service';
+import { IUser } from '../../../../shared/interface';
+
 @Component({
-  selector: 'app-courses-list',
-  templateUrl: './courses-list.component.html',
-  styleUrl: './courses-list.component.scss'
+  selector: 'app-user-list',
+  templateUrl: './user-list.component.html',
+  styleUrl: './user-list.component.scss'
 })
-export class CoursesListComponent implements OnInit,OnDestroy{
-  coursesList: ICourse[] = []
+export class UserListComponent implements OnInit,OnDestroy{
+  userList: IUser[] = []
   
   readonly dialog = inject(MatDialog);
   private suscription: Subscription | null = null; 
-  constructor(private _coursesService:CoursesService){}
+  constructor(private _usersService:UsersService){}
   ngOnInit(): void {
     this.suscribe()
   }
@@ -22,8 +23,8 @@ export class CoursesListComponent implements OnInit,OnDestroy{
     this.unsuscribe()
   }
   suscribe():void{
-    this.suscription = this._coursesService.getObservable().subscribe({
-      next: data => this.coursesList = data,
+    this.suscription = this._usersService.getObservable().subscribe({
+      next: data => this.userList = data,
       error: error=> console.log("error en la suscripcion",error)
     })
   }
@@ -35,12 +36,12 @@ export class CoursesListComponent implements OnInit,OnDestroy{
   }
   
   deleteUser(id: string):void{
-    this._coursesService.deleteCourse(id)
+    this._usersService.deleteUser(id)
   }
-  openModal(course?: ICourse): void {
-    if(course){//editando
+  openModal(user?: IUser): void {
+    if(user){//editando
       const dialogRef = this.dialog.open(ModalComponent,{
-        data: course
+        data: user
       });
       dialogRef.afterClosed().subscribe();
      
@@ -50,4 +51,6 @@ export class CoursesListComponent implements OnInit,OnDestroy{
 
     }
   }
+  
+  
 }
