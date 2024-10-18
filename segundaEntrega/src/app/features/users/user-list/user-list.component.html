@@ -1,0 +1,23 @@
+<div class="container-lista-usuarios">
+    <div class="encabezado">
+        <h3>Lista Usuarios</h3>
+        <a mat-raised-button  (click)="openModal()"> <mat-icon>add</mat-icon> Agregar nuevo usuario</a>
+    </div>
+    <div class="lista-usuarios">
+        <mat-list class="lista">
+            <mat-list-item *ngFor="let user of userList" class="item-lista">
+                <div class="flex-item">
+                    <div class="datos">
+                        <span matListItemTitle class="span-titulo">{{user.name}}</span>
+                        <span matListItemLine class="span-line">{{user.email}}</span>
+                    </div>
+                    <div class="botones">
+                        <button mat-icon-button class="btn-borrar" (click)="deleteUser(user.id)"><mat-icon >close</mat-icon></button>
+                        <button mat-icon-button class="btn-editar" (click)="openModal(user)"><mat-icon  >edit</mat-icon></button>
+                    </div>
+                </div>
+            </mat-list-item>
+        </mat-list>
+        
+    </div>
+</div>

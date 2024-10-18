@@ -1,0 +1,24 @@
+<mat-toolbar  class="navbar">
+    <button mat-icon-button class="icon" (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <a class="a" mat-button routerLink="/dashboard">Inicio</a>
+</mat-toolbar>
+
+<mat-drawer-container  class="container" autosize>
+    <mat-drawer #drawer class="sidenav" mode="side" >
+      <h3>Bienvenido<mat-icon>favorite</mat-icon></h3>
+      <hr>
+      <div class="lista">
+        <a class="a" mat-button routerLink="/dashboard">Inicio</a>
+        <a  class="a" mat-button routerLink="/users">Usuarios</a>
+        <a  class="a" mat-button routerLink="/courses">cursos</a>
+     </div>
+    </mat-drawer>
+    <div class="background">
+    
+        <router-outlet/>
+    
+    </div>
+
+</mat-drawer-container>
