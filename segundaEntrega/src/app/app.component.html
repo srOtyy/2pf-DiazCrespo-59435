@@ -7,6 +7,7 @@
 
 <mat-drawer-container  class="container" autosize>
     <mat-drawer #drawer class="sidenav" mode="side" >
+        <!-- Barra de navegación -->
       <h3>Bienvenido<mat-icon>favorite</mat-icon></h3>
       <hr>
       <div class="lista">
@@ -16,7 +17,7 @@
      </div>
     </mat-drawer>
     <div class="background">
-        <router-outlet/>
+      <!-- Contenido principal -->
+      <router-outlet/>
     </div>
-
 </mat-drawer-container>

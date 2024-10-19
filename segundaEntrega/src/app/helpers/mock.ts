@@ -34,8 +34,8 @@ export const coursesList:ICourse[] = [
 ] 
 export const userList:IUser[] = [
       {
-        "name":"Octavio",
-        "email":"oty2013@outlook.com",
+        "name":"Octavio Diaz Crespo",
+        "email":"mail@outlook.com",
         "rol":"alumno",
         "id":"12fc",
         "courses": [
@@ -45,7 +45,7 @@ export const userList:IUser[] = [
         ]
       },
       {
-        "name": "Octavio Nahuel",
+        "name": "Nahuel DCc",
         "email": "4044@outlook.com",
         "rol":"alumno",
         "id": "22aa",
@@ -57,8 +57,8 @@ export const userList:IUser[] = [
       },
       {
         "id": "1gd3",
-        "name": "Oty",
-        "email": "ttttt@outlook.com",
+        "name": "Federico Fuentes",
+        "email": "ff15@outlook.com",
         "rol":"alumno",
         "courses": [
           "java"
@@ -66,38 +66,29 @@ export const userList:IUser[] = [
       },
       {
         "id": "dd14",
-        "name": "Yoqo",
-        "email": "a@outlook.com",
+        "name": "Juno Yoqono",
+        "email": "junoyoqono@outlook.com",
         "rol":"alumno",
         "courses": [
-          "java","Angular"
+          "java","SQL"
         ]
       },
       {
         "id": "a5f2",
-        "name": "Nahu",
-        "email": "brc@outlook.com",
+        "name": "Ambar Gri",
+        "email": "gri@outlook.com",
         "rol":"alumno",
         "courses": [
-          "C++","Angular"
+          "C++","C#"
         ]
       },
       {
         "id": "6g7t",
-        "name": "Pepe",
-        "email": "brc@outlook.com",
+        "name": "Bri Bee",
+        "email": "dobleB@outlook.com",
         "rol":"alumno",
         "courses": [
-          "C++","Angular"
-        ]
-      },
-      {
-        "id": "31s7",
-        "name": "egro",
-        "email": "brc@outlook.com",
-        "rol":"alumno",
-        "courses": [
-          "C++","Angular"
+          "C++","SQL"
         ]
       }
 ] 
